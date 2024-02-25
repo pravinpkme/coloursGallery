@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ColorThumbnailTableViewCell" rowHeight="216" id="KGk-i7-Jjw" customClass="ColorThumbnailTableViewCell" customModule="BT_Photos" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="400"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="efw-jZ-daX">
+                        <rect key="frame" x="70" y="40" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="efw-jZ-daX" secondAttribute="height" multiplier="1:1" id="Owm-DR-3ib"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0D-59-4zG">
+                        <rect key="frame" x="26" y="187" width="188" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="tAe-42-cSm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wx1-Hk-oyI">
+                        <rect key="frame" x="26" y="304" width="151" height="22"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album ID :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDn-t1-TqS">
+                                <rect key="frame" x="0.0" y="0.0" width="68" height="22"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(id)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8E-rk-lDl">
+                                <rect key="frame" x="83" y="0.0" width="68" height="22"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XJ-np-sO2">
+                        <rect key="frame" x="26" y="160" width="188" height="22"/>
+                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Abj-0Q-l99">
+                        <rect key="frame" x="26" y="267" width="66.333333333333329" height="22"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNt-HN-o5T">
+                                <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="22"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(id)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0H-za-kR1">
+                                <rect key="frame" x="40.666666666666671" y="0.0" width="25.666666666666671" height="22"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="efw-jZ-daX" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="05a-j6-Hei"/>
+                    <constraint firstItem="wx1-Hk-oyI" firstAttribute="top" secondItem="Abj-0Q-l99" secondAttribute="bottom" constant="15" id="3AX-S6-XWR"/>
+                    <constraint firstItem="0XJ-np-sO2" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Byw-NO-eVZ"/>
+                    <constraint firstItem="q0D-59-4zG" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Fb4-a8-h1r"/>
+                    <constraint firstItem="0XJ-np-sO2" firstAttribute="top" secondItem="efw-jZ-daX" secondAttribute="bottom" constant="20" id="LuI-zn-Wte"/>
+                    <constraint firstItem="efw-jZ-daX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="OMr-Me-9qK"/>
+                    <constraint firstItem="Abj-0Q-l99" firstAttribute="top" secondItem="q0D-59-4zG" secondAttribute="bottom" constant="10" id="Y3L-1b-waf"/>
+                    <constraint firstItem="efw-jZ-daX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="Yqw-Cv-OSC"/>
+                    <constraint firstItem="Abj-0Q-l99" firstAttribute="leading" secondItem="q0D-59-4zG" secondAttribute="leading" id="cdF-c1-aVT"/>
+                    <constraint firstItem="wx1-Hk-oyI" firstAttribute="leading" secondItem="q0D-59-4zG" secondAttribute="leading" id="hwb-zp-yUx"/>
+                    <constraint firstItem="q0D-59-4zG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="nEk-LX-qp0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="q0D-59-4zG" secondAttribute="trailing" constant="10" id="nFj-kg-tzr"/>
+                    <constraint firstItem="q0D-59-4zG" firstAttribute="top" secondItem="0XJ-np-sO2" secondAttribute="bottom" constant="5" id="q0s-wv-FuU"/>
+                    <constraint firstItem="0XJ-np-sO2" firstAttribute="leading" secondItem="q0D-59-4zG" secondAttribute="leading" id="yRf-vA-4vZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="albumidName" destination="T8E-rk-lDl" id="xl5-3I-qA9"/>
+                <outlet property="idName" destination="v0H-za-kR1" id="eRC-9l-SrG"/>
+                <outlet property="imgThumbnail" destination="efw-jZ-daX" id="kD8-ia-R5X"/>
+                <outlet property="title" destination="q0D-59-4zG" id="faT-9q-7J4"/>
+            </connections>
+            <point key="canvasLocation" x="-22.900763358778626" y="80.281690140845072"/>
+        </tableViewCell>
+    </objects>
+</document>
