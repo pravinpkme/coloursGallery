@@ -8,17 +8,21 @@
 import Foundation
 import UIKit
 class DetailsTableView : UITableView, UITableViewDelegate, UITableViewDataSource{
+    
+    //var dec
     var controller : MainViewController!
     var photoModel : [PhotoModel]?
     var index: IndexPath!
     
+    
+    // init setup
     func setupDetailCellwith(data: [PhotoModel], index: IndexPath){
         self.photoModel  = data
         self.index = index
         self.reloadData()
     }
     
-    
+    //load TableView
     func loadTableView(inController: MainViewController){
         self.controller = inController
         self.delegate = self
@@ -26,15 +30,19 @@ class DetailsTableView : UITableView, UITableViewDelegate, UITableViewDataSource
         self.register(UINib(nibName: "ColorThumbnailTableViewCell", bundle: nil), forCellReuseIdentifier: "ColorThumbnailTableViewCell")
     }
     
+    // MARK: - TableView Setup
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
+    // MARK: -Cell Setup
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.dequeueReusableCell(withIdentifier: "ColorThumbnailTableViewCell", for: indexPath) as? ColorThumbnailTableViewCell else {
             return UITableViewCell()
         }
+       
         if let thumbUrl = photoModel?[index.row].thumbnailUrl{
             cell.imgThumbnail.downloadImage(from: thumbUrl)
         }
@@ -49,6 +57,7 @@ class DetailsTableView : UITableView, UITableViewDelegate, UITableViewDataSource
         
         return cell
     }
+    //cell Height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
     }

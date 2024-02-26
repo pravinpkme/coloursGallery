@@ -76,6 +76,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		570A7C042B8C3B06003C1968 /* PhotosClnView */ = {
+			isa = PBXGroup;
+			children = (
+				576794CC2B8B49C2001EF73C /* PhotosCollectionView.swift */,
+				57FA751E2B8A55F700390D9D /* PhotoCollectionViewCell */,
+			);
+			path = PhotosClnView;
+			sourceTree = "<group>";
+		};
+		570A7C052B8C3B17003C1968 /* DetailsTblView */ = {
+			isa = PBXGroup;
+			children = (
+				576794D12B8B5631001EF73C /* DetailsTableView.swift */,
+				576794DB2B8B583E001EF73C /* ColorThumbnail */,
+			);
+			path = DetailsTblView;
+			sourceTree = "<group>";
+		};
 		576794CE2B8B4A38001EF73C /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,20 +209,10 @@
 		578CDA292B8B8B0400DAA267 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				576794CC2B8B49C2001EF73C /* PhotosCollectionView.swift */,
-				576794D12B8B5631001EF73C /* DetailsTableView.swift */,
-				578CDA2A2B8B8B2A00DAA267 /* Cell */,
+				570A7C042B8C3B06003C1968 /* PhotosClnView */,
+				570A7C052B8C3B17003C1968 /* DetailsTblView */,
 			);
 			path = SubViews;
-			sourceTree = "<group>";
-		};
-		578CDA2A2B8B8B2A00DAA267 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				57FA751E2B8A55F700390D9D /* PhotoCollectionViewCell */,
-				576794DB2B8B583E001EF73C /* ColorThumbnail */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		578CDA2B2B8B8B4C00DAA267 /* AppDelegate */ = {
@@ -555,7 +563,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pravin.bt-photos.BT-Photos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pravin.BT-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -585,7 +593,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pravin.bt-photos.BT-Photos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pravin.BT-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

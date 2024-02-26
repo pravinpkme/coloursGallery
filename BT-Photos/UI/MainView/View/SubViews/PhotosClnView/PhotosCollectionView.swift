@@ -10,21 +10,22 @@ import UIKit
 
 class PhotosCollectionView : UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    //var declaration
     var controller : MainViewController!
     var photoModel: [PhotoModel]?
     
+    
+    //init setup
     func loadCollectionView(inController: MainViewController){
         
         self.controller = inController
-        
-        self.setupCollectionViewLayout()
-        self.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCollectionViewCell")
-        
         self.delegate = self
         self.dataSource = self
+        self.setupCollectionViewLayout()
+        self.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCollectionViewCell")
     }
     
-    
+    //Cell UI Setup
     func setupCollectionViewLayout(){
         let flowlayout = UICollectionViewFlowLayout()
         flowlayout.itemSize = CGSize(width: 0.8 * self.bounds.width, height: 0.8 * self.bounds.width)
@@ -35,7 +36,7 @@ class PhotosCollectionView : UICollectionView, UICollectionViewDelegate, UIColle
         self.collectionViewLayout = flowlayout
     }
     
-    
+    // MARK: - CollectionView Setup
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoModel?.count ?? 0
@@ -51,6 +52,7 @@ class PhotosCollectionView : UICollectionView, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    //on tap of cell
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

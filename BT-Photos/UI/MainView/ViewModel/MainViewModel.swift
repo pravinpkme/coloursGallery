@@ -3,12 +3,14 @@
 import Foundation
 
 class MainViewModel {
-
+    
+    //max is 100 and min is 1
     var photoCount: Int = 1 {
         didSet {
             photoCount = max(1, min(100, photoCount))
         }
     }
+    
     
     var isSidePanelOpen: Bool = false
     var photoModel: [PhotoModel]?

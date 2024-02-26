@@ -10,7 +10,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Main View Setup
     
-    //collection view
+    //mian collection view
     @IBOutlet weak var photoCollectionView: PhotosCollectionView! {
         didSet {
             photoCollectionView.layer.cornerRadius = 10
@@ -27,29 +27,24 @@ class MainViewController: UIViewController {
             }
         }
         
-        
         @IBOutlet weak var forwardBtnView: UIView!{
             didSet{
                 forwardBtnView.makeCircular()
                 forwardBtnView.addTapGesture(target: self, action:  #selector(onForwardPress))
             }
         }
-    //backround for btn
     
+    //backround for navigation btns
     @IBOutlet weak var navBtnBackroundView: UIView!{
         didSet{
             navBtnBackroundView.makeCircular()
         }
     }
     
-    
-    
 // MARK: - Side Pannel Setup
     
     //closebtn
     @IBOutlet weak var detailCloseButton: UIButton!
-
-
    //backroundview
     @IBOutlet weak var detailViewBackround: UIView! {
            didSet {
@@ -59,8 +54,8 @@ class MainViewController: UIViewController {
        }
     //show sidepannel in cell
     @IBOutlet weak var detailTableView: DetailsTableView!
-    
-    
+   
+    //hide side panel when x is pressed
     @IBAction func onCloseBtnPress(_ sender: UIButton) {
         closeSidePanel()
     }
@@ -77,12 +72,10 @@ class MainViewController: UIViewController {
     // MARK: -Variable Dec
 
     var viewModel = MainViewModel()
-    var tapGesture: UITapGestureRecognizer?
-    
+    var tapGesture: UITapGestureRecognizer!
     
     
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         detailViewConstrain.constant = 0
@@ -97,7 +90,7 @@ class MainViewController: UIViewController {
 
     
    // MARK: -handle Tap methods
-        //outside
+        //outside tap to close sidepanel
     @objc func handleTapOutsideSidePanel() {
         if viewModel.isSidePanelOpen {
             closeSidePanel()
@@ -126,7 +119,7 @@ class MainViewController: UIViewController {
     }
 
     
-    // MARK: - API Data Loading
+    // MARK: - API Init
 
     func updateUI(with result: Result<[PhotoModel], Error>) {
         switch result {
@@ -135,7 +128,7 @@ class MainViewController: UIViewController {
             photoCollectionView.reloadData()
         case .failure(let error):
             print(error.localizedDescription)
-            showToast(message: error.localizedDescription)
+            showAlert(title: "Error", message: error.localizedDescription)
         }
     }
     
@@ -151,13 +144,14 @@ class MainViewController: UIViewController {
             viewModel.isSidePanelOpen = true
 
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapOutsideSidePanel))
-            view.addGestureRecognizer(tapGesture!)
+            view.addGestureRecognizer(tapGesture)
         }
 
         detailTableView.setupDetailCellwith(data: viewModel.photoModel!, index: index)
     }
     
     // MARK: -Close Side Panel
+    
     func closeSidePanel() {
         viewModel.isSidePanelOpen = false
         UIView.animate(withDuration: 0.3) {
@@ -170,4 +164,5 @@ class MainViewController: UIViewController {
             self.tapGesture = nil
         }
     }
+    
 }
